@@ -29,21 +29,17 @@ c.addEventListener("click", clickLogic)
 function clickLogic(e) {
     currentCard = e.target.parentElement;
     
-   // This function is supposed to check if a card has been flipped and if it has not it will flip it. Also adds the flipped card to an array to be compared.
-    if (currentCard.classList !== "is-flipped") {
-        currentCard.cardFlipped = false;
+   // This function is supposed to check if a card has been flipped and if it has not it will flip it. Also adds the flipped card to an array to be compared
+        
+        if (!currentCard.classList.contains("is-flipped")){
         scoreCounter++;
         scoreBoard.innerText = "Score: " + scoreCounter;
-        if (!currentCard.cardFlipped){
         currentCard.classList.add("is-flipped")
-        currentCard.cardFlipped = true;
-        console.log(currentCard.cardFlipped);
         flipped.push(currentCard);
         flippedCounter++;
         console.log(flippedCounter);
         } else {
           return;
-        }
         }
    
 // This statement checks two cards added to the array to see if they match. If they do it pushes the cards to another array, if not it flips them over
